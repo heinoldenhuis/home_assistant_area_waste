@@ -1,0 +1,7 @@
+{
+    "name": "Integration for bin/waste collection by Area Reiniging",
+    "domains": [
+        "sensor"
+    ],
+    "country": "NL"
+}

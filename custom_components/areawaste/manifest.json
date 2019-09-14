@@ -1,0 +1,8 @@
+{
+  "domain": "areawaste",
+  "name": "Area Waste Collection",
+  "documentation": "https://github.com/heinoldenhuis/home_assistant_area_waste/blob/master/README.md",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": []
+}

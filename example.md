@@ -160,4 +160,4 @@ views:
 ```
 
 Pictures used in this example can be found [here](https://github.com/heinoldenhuis/home_assistant_area_waste/blob/master/images/waste).
-You can place these images in your Home Assistant config folder <config>/www/waste.
+You can place these images in your Home Assistant config folder 'config/www/waste'.

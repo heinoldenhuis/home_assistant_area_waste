@@ -26,8 +26,9 @@ sensor:
         value_template: >
           {% set months = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"] %}
           {% set weekdays = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"] %}
-          {% set month = months[now().strftime('%m') | int -1] %}
-          {% set weekday = weekdays[now().strftime('%w') | int] %}
+          {% set date = strptime(state_attr('sensor.waste_today', 'date'), '%Y-%m-%d') %}
+          {% set month = months[date.strftime('%m') | int -1] %}
+          {% set weekday = weekdays[date.strftime('%w') | int] %}
           {{ weekday + ' ' + now().strftime('%d') + ' ' + month + ' '+ now().strftime('%Y') }}
       waste_green_formatted:
         friendly_name: 'GFT afval'
@@ -160,4 +161,5 @@ views:
 ```
 
 Pictures used in this example can be found [here](https://github.com/heinoldenhuis/home_assistant_area_waste/blob/master/images/waste).
+
 You can place these images in your Home Assistant config folder 'config/www/waste'.

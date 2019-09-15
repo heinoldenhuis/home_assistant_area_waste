@@ -196,6 +196,7 @@ class AbstractWasteSensor(Entity):
         self._schedule = None
         self._name = "Waste {}".format(SENSOR_TYPES[sensor_type][0])
         self._icon = SENSOR_TYPES[sensor_type][1]
+        self._date = None
 
     @property
     def name(self):
@@ -215,7 +216,9 @@ class AbstractWasteSensor(Entity):
     @property
     def device_state_attributes(self):
         if not self._schedule:
-            return None
+            if not self._date:
+                return None
+            return { ATTR_DATE: self._date.strftime('%Y-%m-%d') }
 
         return {
             ATTR_DATE: self._schedule.pickup_date.strftime('%Y-%m-%d'),
@@ -242,6 +245,7 @@ class TodayWasteSensor(AbstractWasteSensor):
     def update(self):
         self._reader.update()
         self._schedule = self._reader.collection_today()
+        self._date = datetime.now().date()
 
     @property
     def state(self):
@@ -259,6 +263,7 @@ class TomorrowWasteSensor(AbstractWasteSensor):
     def update(self):
         self._reader.update()
         self._schedule = self._reader.collection_tomorrow()
+        self._date = datetime.now().date() + timedelta(days=1)
 
     @property
     def state(self):

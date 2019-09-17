@@ -29,7 +29,7 @@ sensor:
           {% set date = strptime(state_attr('sensor.waste_today', 'date'), '%Y-%m-%d') %}
           {% set month = months[date.strftime('%m') | int -1] %}
           {% set weekday = weekdays[date.strftime('%w') | int] %}
-          {{ weekday + ' ' + now().strftime('%d') + ' ' + month + ' '+ now().strftime('%Y') }}
+          {{ weekday + ' ' + date.strftime('%d') + ' ' + month + ' '+ date.strftime('%Y') }}
       waste_green_formatted:
         friendly_name: 'GFT afval'
         entity_picture_template: /local/waste/gft_icon.png

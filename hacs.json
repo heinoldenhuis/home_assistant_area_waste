@@ -1,5 +1,5 @@
 {
-    "name": "Integration for bin/waste collection by Area Reiniging",
+    "name": "Afvalkalender voor Area Reiniging",
     "domains": [
         "sensor"
     ],

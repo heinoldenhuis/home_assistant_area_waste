@@ -1,4 +1,4 @@
-# Home Assistant integration for bin/waste collection for Area Reiniging
+# Home Assistant bin/waste collection integration for Area Reiniging
 
 The Area Waste integration will retrieve calendar data from Area Reiniging.
 

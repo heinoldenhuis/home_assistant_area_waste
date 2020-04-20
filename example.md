@@ -19,7 +19,7 @@ sensor:
       - plastic
       - grey
   #Template sensors for date today and formatted sensors (Local names/translations in Dutch).
-    - platform: template
+  - platform: template
     sensors:
       date_today: 
         friendly_name: 'Datum'

@@ -19,47 +19,63 @@ sensor:
       - plastic
       - grey
   #Template sensors for date today and formatted sensors (Local names/translations in Dutch).
-  - platform: template
+    - platform: template
     sensors:
       date_today: 
         friendly_name: 'Datum'
         value_template: >
           {% set months = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"] %}
           {% set weekdays = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"] %}
+          {% if state_attr('sensor.waste_today', 'date') != None %}
           {% set date = strptime(state_attr('sensor.waste_today', 'date'), '%Y-%m-%d') %}
           {% set month = months[date.strftime('%m') | int -1] %}
           {% set weekday = weekdays[date.strftime('%w') | int] %}
           {{ weekday + ' ' + date.strftime('%d') + ' ' + month + ' '+ date.strftime('%Y') }}
+          {% else %}
+            Onbekend
+          {% endif %}
       waste_green_formatted:
         friendly_name: 'GFT afval'
-        entity_picture_template: /local/waste/gft_icon.png
+        entity_picture_template: /local/waste/green_icon.png
         value_template: >
           {% set months = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"] %}
           {% set weekdays = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"] %}
+          {% if states('sensor.waste_green') != 'unknown' %}
           {% set date = strptime(states('sensor.waste_green'), '%Y-%m-%d') %}
           {% set month = months[date.strftime('%m') | int -1] %}
           {% set weekday = weekdays[date.strftime('%w') | int] %}
           {{ weekday + ' ' + date.strftime('%d') + ' ' + month }}
+          {% else %}
+            Onbekend
+          {% endif %}
       waste_plastic_formatted:
         friendly_name: 'Plastic'
-        entity_picture_template: /local/waste/pmd_icon.png
+        entity_picture_template: /local/waste/plastic_icon.png
         value_template: >
           {% set months = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"] %}
           {% set weekdays = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"] %}
+          {% if states('sensor.waste_plastic') != 'unknown' %}
           {% set date = strptime(states('sensor.waste_plastic'), '%Y-%m-%d') %}
           {% set month = months[date.strftime('%m') | int -1] %}
           {% set weekday = weekdays[date.strftime('%w') | int] %}
           {{ weekday + ' ' + date.strftime('%d') + ' ' + month }}
+          {% else %}
+            Onbekend
+          {% endif %}
       waste_residual_formatted:
         friendly_name: 'Restafval'
-        entity_picture_template: /local/waste/restafval_icon.png
+        entity_picture_template: /local/waste/grey_icon.png
         value_template: >
           {% set months = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"] %}
           {% set weekdays = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"] %}
+          {% if states('sensor.waste_residual') != 'unknown' %}
           {% set date = strptime(states('sensor.waste_residual'), '%Y-%m-%d') %}
           {% set month = months[date.strftime('%m') | int -1] %}
           {% set weekday = weekdays[date.strftime('%w') | int] %}
           {{ weekday + ' ' + date.strftime('%d') + ' ' + month }}
+          {% else %}
+            Onbekend
+          {% endif %}
       waste_today_formatted:
         friendly_name: 'Vandaag'
         value_template: >

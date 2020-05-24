@@ -1,3 +1,8 @@
+# :warning: Deprecation warning
+This integration is deprecated and the same functionality and more can be found in [Home-Assistant-Sensor-Afvalbeheer](https://github.com/pippyn/Home-Assistant-Sensor-Afvalbeheer).
+
+Therefore this integration will no longer receive any updates and is deprecated.
+
 # Home Assistant bin/waste collection integration for Area Reiniging.
 
 The Areawaste integration retrieved calendar data from Area Reiniging.

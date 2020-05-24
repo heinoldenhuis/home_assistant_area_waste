@@ -4,6 +4,12 @@ Original Author:  Floris Kruisselbrink <floris+homeassistant@vloris.nl>
 Modification by: Hein Oldenhuis <https://github.com/heinoldenhuis/home_assistant_area_waste>
 
 This repo works in Coevorden, Emmen and Hoogeveen.
+
+Deprecation warning:
+This integration is deprecated and the same functionality and more can be found in [Home-Assistant-Sensor-Afvalbeheer](https://github.com/pippyn/Home-Assistant-Sensor-Afvalbeheer).
+
+Therefore this integration will no longer receive any updates and is deprecated.
+
 """
 
 import logging
@@ -17,7 +23,7 @@ from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import ATTR_DATE, CONF_RESOURCES
 from homeassistant.helpers.entity import Entity
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 _LOGGER = logging.getLogger(__name__)
 

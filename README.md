@@ -1,3 +1,8 @@
+# :warning: Deprecation warning
+This integration is deprecated and the same functionality and more can be found in [Home-Assistant-Sensor-Afvalbeheer](https://github.com/pippyn/Home-Assistant-Sensor-Afvalbeheer).
+
+Therefore this integration will no longer receive any updates and is deprecated.
+
 # Home Assistant bin/waste collection integration for Area Reiniging
 
 The Area Waste integration will retrieve calendar data from Area Reiniging.
@@ -7,7 +12,7 @@ The component is supposed to work for Coevorden, Emmen and Hoogeveen.
 >Note: For Coevorden and Emmen the Green, Plastic and Residual waste sensors are available.
 Hoogeveen also has Remainder and Trees waste sensors available.
 
->Note: This integration is based upon the work from Floris Kruisselbrink: [Github](https://github.com/vloris/home-assistant/blob/master/custom_components/sensor/twentemilieu.py) (supports Twentemilieu (Enschede)).
+>Note: This integration is based upon the work from Floris Kruisselbrink: [Github](https://github.com/vloris/home-assistant/blob/master/custom_compoents/sensor/twentemilieu.py) (supports Twentemilieu (Enschede)).
 Also an integration is made by Cadsters for ACV (Ede, Renkum, Renswoude, Veenendaal and Wageningen) which can be found at HACS and [Github](https://github.com/Cadsters/acv-hass-component).
 Many thanks because little work was needed to support Area Reiniging.
 
